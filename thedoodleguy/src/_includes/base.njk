@@ -7,7 +7,7 @@
   {# ---------- SEO ---------- #}
   {% set pageTitle = metaTitle or title %}
   {% set pageDescription = description or site.description %}
-  <title>{% if pageTitle %}{{ pageTitle }} — {% endif %}{{ site.name }}</title>
+  <title>{% if pageTitle %}{{ pageTitle }} | {% endif %}{{ site.name }}</title>
   <meta name="description" content="{{ pageDescription }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <meta name="author" content="{{ site.author }}">
@@ -61,7 +61,7 @@
       <a href="/#newsletter">Newsletter</a>
     </div>
   </div>
-  <div class="footer-base mono">© 2026 theDoodleGuy.com — human_output: true</div>
+  <div class="footer-base mono">© 2026 theDoodleGuy.com // human_output: true</div>
 </footer>
 
 </body>
