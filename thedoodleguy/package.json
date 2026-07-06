@@ -1,0 +1,13 @@
+{
+  "name": "thedoodleguy",
+  "version": "1.0.0",
+  "description": "theDoodleGuy.com — designers adapting to AI",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

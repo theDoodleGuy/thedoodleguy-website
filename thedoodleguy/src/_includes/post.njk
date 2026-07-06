@@ -1,0 +1,38 @@
+---
+layout: base.njk
+isPost: true
+---
+<article class="article">
+  <a class="hand back" href="/blog/">← back to all posts</a>
+  <div class="post-meta mono">
+    <span class="tag tag-{{ pillar | replace(' ', '') | lower }}">{{ pillar }}</span>
+    <span><time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time> · {{ readTime }} read</span>
+  </div>
+  <h1 class="display">{{ title }}</h1>
+  <svg viewBox="0 0 180 14" width="220" aria-hidden="true" class="draw-in">
+    <path d="M3 9 C 20 2, 35 13, 52 7 S 85 2, 102 8 S 140 13, 177 5" fill="none" stroke="var(--red)" stroke-width="3.5" stroke-linecap="round" pathLength="1"/>
+  </svg>
+
+  <div class="article-body">
+    {{ content | safe }}
+  </div>
+
+  <div class="article-end">
+    <p class="hand signoff">— theDoodleGuy ✏️</p>
+  </div>
+</article>
+
+{% include "newsletter.njk" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "datePublished": "{{ page.date | isoDate }}",
+  "author": { "@type": "Person", "name": "{{ site.author }}", "url": "{{ site.url }}" },
+  "publisher": { "@type": "Organization", "name": "{{ site.name }}", "url": "{{ site.url }}" },
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+}
+</script>
