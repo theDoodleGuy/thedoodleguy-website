@@ -12,14 +12,16 @@
        concrete thing to try. Written by a career designer turned product manager who's living
        the adaptation, not a content farm.</p>
 
-    {# NEWSLETTER FORM (placeholder).
-       To go live, replace the action URL below with your provider's form endpoint
-       (instructions for Mailchimp / Kit / Buttondown are in the README). #}
-    <form class="signup" action="#" method="post">
-      <input type="email" name="email" placeholder="you@studio.com" aria-label="Email address" required>
+    {# Submits into a hidden iframe (target="hidden_iframe") so the visitor never
+       leaves the page for Google's own confirmation screen; the onsubmit handler
+       swaps in our own "thanks" message after a short delay for the POST to land. #}
+    <form class="signup" id="newsletter-form" action="https://docs.google.com/forms/d/e/1FAIpQLScsR6DVjl1MlrVb3YyA5g_1aMOLr21qYh4NSX03pFvoRv_mDg/formResponse" method="post" target="hidden_iframe" onsubmit="setTimeout(function () { document.getElementById('newsletter-form').style.display = 'none'; document.getElementById('newsletter-note').style.display = 'none'; document.getElementById('newsletter-thanks').style.display = 'block'; }, 300)">
+      <input type="email" name="entry.872290881" placeholder="you@studio.com" aria-label="Email address" required>
       <button class="btn btn-ink" type="submit">Join the list</button>
     </form>
+    <iframe name="hidden_iframe" style="display:none" aria-hidden="true"></iframe>
 
-    <p class="hand note">ps. it's free. your inbox will survive.</p>
+    <p id="newsletter-thanks" class="hand note" style="display:none">ps. you're on the list. first one lands next week.</p>
+    <p id="newsletter-note" class="hand note">ps. it's free. your inbox will survive.</p>
   </div>
 </section>
