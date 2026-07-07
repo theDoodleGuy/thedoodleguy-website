@@ -39,7 +39,7 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .draw-in path { animation: none; stroke-dashoffset: 0; }
   .fade-1, .fade-2, .fade-3, .fade-4 { animation: none; opacity: 1; }
-  #newsletter-thanks.show { animation: none; opacity: 1; }
+  .success-card.show, .success-card.show .success-ring, .success-card.show .success-tick { animation: none; opacity: 1; stroke-dashoffset: 0; }
 }
 
 /* NAV */
@@ -141,7 +141,16 @@ section { padding: 64px 0; }
 .signup.is-fading { opacity: 0; }
 #newsletter-note { transition: opacity .25s ease; }
 #newsletter-note.is-fading { opacity: 0; }
-#newsletter-thanks.show { animation: rise .5s ease both; }
+
+.success-card { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin-top: 22px; padding: 22px 26px; background: #fff; border: 2.5px solid var(--ink); border-radius: 14px; box-shadow: 5px 5px 0 var(--ink); max-width: 380px; }
+.success-card.show { animation: rise .4s ease both; }
+.success-check { width: 44px; height: 44px; margin-bottom: 6px; }
+.success-ring { stroke-dasharray: 164; stroke-dashoffset: 164; }
+.success-card.show .success-ring { animation: draw .5s ease forwards; }
+.success-tick { stroke-dasharray: 40; stroke-dashoffset: 40; }
+.success-card.show .success-tick { animation: draw .3s ease forwards .45s; }
+.success-title { font-family: 'Archivo Black', sans-serif; font-weight: 400; font-size: 1.2rem; }
+.success-sub { font-size: 1.15rem; transform: rotate(-1deg); }
 .note { margin-top: 14px; font-size: 1.25rem; transform: rotate(-1deg); }
 
 /* FOOTER */
