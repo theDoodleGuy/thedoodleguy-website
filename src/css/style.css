@@ -39,6 +39,7 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .draw-in path { animation: none; stroke-dashoffset: 0; }
   .fade-1, .fade-2, .fade-3, .fade-4 { animation: none; opacity: 1; }
+  #newsletter-thanks.show { animation: none; opacity: 1; }
 }
 
 /* NAV */
@@ -133,9 +134,14 @@ section { padding: 64px 0; }
 .newsletter-card p { max-width: 56ch; }
 .circled { position: relative; display: inline-block; padding: 0 .1em; }
 .circled svg { position: absolute; inset: -18% -8%; width: 116%; height: 136%; pointer-events: none; }
-.signup { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+.signup { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; transition: opacity .25s ease; }
 .signup input { flex: 1 1 240px; padding: 13px 18px; border: 2.5px solid var(--ink); border-radius: 999px; font-family: 'Karla', sans-serif; font-size: 1rem; background: var(--paper); }
 .signup input:focus { outline: 3px solid var(--blue); outline-offset: 2px; }
+.signup button:disabled { opacity: .65; cursor: default; }
+.signup.is-fading { opacity: 0; }
+#newsletter-note { transition: opacity .25s ease; }
+#newsletter-note.is-fading { opacity: 0; }
+#newsletter-thanks.show { animation: rise .5s ease both; }
 .note { margin-top: 14px; font-size: 1.25rem; transform: rotate(-1deg); }
 
 /* FOOTER */

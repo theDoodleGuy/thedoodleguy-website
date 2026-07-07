@@ -13,15 +13,42 @@
        the adaptation, not a content farm.</p>
 
     {# Submits into a hidden iframe (target="hidden_iframe") so the visitor never
-       leaves the page for Google's own confirmation screen; the onsubmit handler
-       swaps in our own "thanks" message after a short delay for the POST to land. #}
-    <form class="signup" id="newsletter-form" action="https://docs.google.com/forms/d/e/1FAIpQLScsR6DVjl1MlrVb3YyA5g_1aMOLr21qYh4NSX03pFvoRv_mDg/formResponse" method="post" target="hidden_iframe" onsubmit="setTimeout(function () { document.getElementById('newsletter-form').style.display = 'none'; document.getElementById('newsletter-note').style.display = 'none'; document.getElementById('newsletter-thanks').style.display = 'block'; }, 300)">
+       leaves the page for Google's own confirmation screen. The button gives
+       immediate "Joining…" feedback, then the form fades out and the thanks
+       message rises in, instead of an abrupt swap. #}
+    <form class="signup" id="newsletter-form" action="https://docs.google.com/forms/d/e/1FAIpQLScsR6DVjl1MlrVb3YyA5g_1aMOLr21qYh4NSX03pFvoRv_mDg/formResponse" method="post" target="hidden_iframe">
       <input type="email" name="entry.872290881" placeholder="you@studio.com" aria-label="Email address" required>
       <button class="btn btn-ink" type="submit">Join the list</button>
     </form>
     <iframe name="hidden_iframe" style="display:none" aria-hidden="true"></iframe>
 
-    <p id="newsletter-thanks" class="hand note" style="display:none">ps. you're on the list. first one lands next week.</p>
+    <p id="newsletter-thanks" class="hand note" hidden>ps. you're on the list. first one lands next week.</p>
     <p id="newsletter-note" class="hand note">ps. it's free. your inbox will survive.</p>
   </div>
 </section>
+
+<script>
+  (function () {
+    var form = document.getElementById('newsletter-form');
+    var note = document.getElementById('newsletter-note');
+    var thanks = document.getElementById('newsletter-thanks');
+    var button = form.querySelector('button');
+
+    form.addEventListener('submit', function () {
+      button.disabled = true;
+      button.textContent = 'Joining…';
+
+      setTimeout(function () {
+        form.classList.add('is-fading');
+        note.classList.add('is-fading');
+      }, 350);
+
+      setTimeout(function () {
+        form.style.display = 'none';
+        note.style.display = 'none';
+        thanks.hidden = false;
+        thanks.classList.add('show');
+      }, 600);
+    });
+  })();
+</script>
