@@ -3,6 +3,8 @@ name: Build and deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "17 5 * * *" # daily rebuild so scheduled posts go live on their date
   workflow_dispatch:
 
 permissions:

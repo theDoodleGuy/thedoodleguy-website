@@ -46,6 +46,8 @@ and normal markdown for **bold**, *italics*, [links](https://example.com) and li
 
 5. Click **Commit changes** — the site rebuilds and publishes itself in ~1 minute
 
+**Scheduling:** give a post a future `date` and it stays hidden until that day. The site rebuilds automatically every morning (about 6am UK time), so it appears without you doing anything.
+
 `pillar` must be one of: `Adaptation`, `Tech Advances`, `Past Experience` (it drives the coloured tag and the blog filters).
 
 You can do all of this from your phone via the GitHub website or app.

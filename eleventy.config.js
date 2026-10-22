@@ -17,6 +17,16 @@ export default function (eleventyConfig) {
     return new Date(dateObj).toISOString().split("T")[0];
   });
 
+  // Scheduled posts: a post dated in the future is left out of the build
+  // until its date arrives (the deploy workflow rebuilds daily to pick it up).
+  // Local dev server (npm start) still shows them so you can preview.
+  eleventyConfig.addPreprocessor("scheduled-posts", "md", (data) => {
+    if (process.env.ELEVENTY_RUN_MODE === "serve") return;
+    if (data.page?.inputPath?.includes("/posts/") && data.page.date > new Date()) {
+      return false;
+    }
+  });
+
   // Newest posts first
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi
