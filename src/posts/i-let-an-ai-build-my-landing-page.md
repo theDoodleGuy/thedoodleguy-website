@@ -59,4 +59,6 @@ If your value is "I know what this landing page needs to make someone feel, and 
 
 The shift I'd encourage: stop measuring yourself by what you can produce and start measuring yourself by what you can *direct and correct*. Write better briefs. Get faster at spotting the generic. Get comfortable saying "technically fine, but not right" and explaining why.
 
+(See the finished result, cracked yellow eye and all, at [prose7.com](https://prose7.com).)
+
 The AI built my landing page. I made it mine. Both jobs were real. Only one of them is getting cheaper.
