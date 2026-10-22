@@ -3,7 +3,7 @@ title: "I let an AI build my landing page. Here's what I still had to fix"
 metaTitle: "I let AI build my landing page. Here's what I had to fix"
 description: "An AI coding agent built a whole website from a brief. It was impressive, fast, and wrong in exactly the places where taste lives. An honest teardown."
 excerpt: "An AI coding agent built a whole website from my brief. It was fast, impressive, and wrong in exactly the places where taste lives."
-date: 2026-11-24
+date: 2026-10-20
 pillar: Tech Advances
 readTime: 4 min
 ---
