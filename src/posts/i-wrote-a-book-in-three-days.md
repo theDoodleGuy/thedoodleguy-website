@@ -3,7 +3,7 @@ title: "I wrote a book in three days. Here's what AI actually did"
 metaTitle: "How I wrote a book in three days with AI (honestly)"
 description: "From a Belfast airport bookshop to a published Kindle book in a long weekend: what AI did, what I did, and why the split matters."
 excerpt: "A WHSmith book chart, a long weekend and a fictional AI called PROSE-7. An honest split of what the machine wrote, and what it still needed me for."
-date: 2026-09-22
+date: 2026-09-14
 pillar: Past Experience
 readTime: 4 min
 ---

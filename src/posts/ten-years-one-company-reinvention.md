@@ -3,7 +3,7 @@ title: "What 10 years at one company taught me about reinvention"
 metaTitle: "Career reinvention without leaving: 10 years, one company"
 description: "Everyone says adapting means jumping ship. I've reinvented myself several times without leaving the building. Here's what staying taught me."
 excerpt: "Everyone says the way to adapt is to jump ship. I've reinvented myself several times without leaving the building. Here's what staying taught me."
-date: 2026-08-18
+date: 2026-08-10
 pillar: Past Experience
 readTime: 4 min
 ---

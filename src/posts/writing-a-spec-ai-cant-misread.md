@@ -3,7 +3,7 @@ title: "The designer's guide to writing a spec an AI can't misread"
 metaTitle: "How to brief AI design tools: write a spec, not a prompt"
 description: "Prompt tricks expire with every model update. A good brief doesn't. Why the spec is the most valuable AI skill a designer can learn."
 excerpt: "Magic prompts expire with every model update. A good brief doesn't. Why the PM's oldest tool is the most valuable AI skill a designer can learn."
-date: 2026-07-14
+date: 2026-07-13
 pillar: Adaptation
 readTime: 4 min
 ---
