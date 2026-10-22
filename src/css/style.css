@@ -127,6 +127,13 @@ section { padding: 64px 0; }
 .article-body blockquote { border-left: 4px solid var(--yellow); margin: 22px 0; padding: 4px 0 4px 18px; font-style: italic; }
 .article-end { border-top: 2.5px dashed var(--ink); margin-top: 40px; padding-top: 18px; }
 .signoff { font-size: 1.5rem; }
+.share { margin-top: 22px; }
+.share-label { font-size: 1.35rem; margin: 0 0 10px; color: var(--blue); }
+.share-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.share-btn { display: inline-block; font-family: 'Karla', sans-serif; font-weight: 700; font-size: .95rem; line-height: 1; padding: 10px 16px; border-radius: 999px; border: 2.5px solid var(--ink); background: #fff; color: var(--ink); text-decoration: none; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
+.share-btn:hover, .share-btn:focus-visible { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 var(--ink); }
+.share-btn[hidden] { display: none; }
+.share-native { background: var(--yellow); }
 
 /* NEWSLETTER */
 .newsletter-card { background: var(--yellow); border: 2.5px solid var(--ink); border-radius: 18px; padding: 44px 36px; box-shadow: 7px 7px 0 var(--ink); transform: rotate(-.4deg); }

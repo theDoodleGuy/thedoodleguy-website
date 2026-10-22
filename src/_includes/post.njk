@@ -19,7 +19,40 @@ isPost: true
 
   <div class="article-end">
     <p class="hand signoff">~ theDoodleGuy ✏️</p>
+    {% set shareUrl = (site.url + page.url) | urlencode %}
+    {% set shareText = title | urlencode %}
+    <div class="share" aria-label="Share this post">
+      <p class="hand share-label">liked it? pass it on →</p>
+      <div class="share-buttons">
+        <button type="button" class="share-btn share-native" hidden data-title="{{ title }}" data-url="{{ site.url }}{{ page.url }}">Share…</button>
+        <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ shareUrl }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}" target="_blank" rel="noopener">Facebook</a>
+        <a class="share-btn" href="https://x.com/intent/post?text={{ shareText }}&url={{ shareUrl }}" target="_blank" rel="noopener">X</a>
+        <a class="share-btn" href="https://bsky.app/intent/compose?text={{ shareText }}%20{{ shareUrl }}" target="_blank" rel="noopener">Bluesky</a>
+        <a class="share-btn" href="https://wa.me/?text={{ shareText }}%20{{ shareUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="share-btn" href="https://www.reddit.com/submit?url={{ shareUrl }}&title={{ shareText }}" target="_blank" rel="noopener">Reddit</a>
+        <a class="share-btn" href="mailto:?subject={{ shareText }}&body={{ shareUrl }}">Email</a>
+        <button type="button" class="share-btn share-copy" data-url="{{ site.url }}{{ page.url }}">Copy link</button>
+      </div>
+    </div>
   </div>
+  <script>
+    (function () {
+      var native = document.querySelector('.share-native');
+      if (native && navigator.share) {
+        native.hidden = false;
+        native.addEventListener('click', function () {
+          navigator.share({ title: native.dataset.title, url: native.dataset.url }).catch(function () {});
+        });
+      }
+      var copy = document.querySelector('.share-copy');
+      if (copy) copy.addEventListener('click', function () {
+        var done = function () { copy.textContent = 'Copied ✓'; setTimeout(function () { copy.textContent = 'Copy link'; }, 2000); };
+        if (navigator.clipboard) navigator.clipboard.writeText(copy.dataset.url).then(done, function () { prompt('Copy this link:', copy.dataset.url); });
+        else prompt('Copy this link:', copy.dataset.url);
+      });
+    })();
+  </script>
 </article>
 
 {% include "newsletter.njk" %}
