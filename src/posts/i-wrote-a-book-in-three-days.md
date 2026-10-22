@@ -67,6 +67,6 @@ If you're a designer worrying about AI, here's what three days of book writing t
 
 I had so much fun that book two is already in the works. PROSE-7 has opinions about your job next.
 
-If you want to see what a designer-turned-PM and a deeply unreliable AI narrator produce in a long weekend, [*The Algorithm Ate My Homework* is on Kindle](https://amzn.eu/d/0iOzbq8n). And if you read it, an honest Amazon review genuinely helps more than you'd think.
+If you want to see what a designer-turned-PM and a deeply unreliable AI narrator produce in a long weekend, [*The Algorithm Ate My Homework* is on Kindle](https://amzn.eu/d/0iOzbq8n). You can also meet PROSE-7 itself at [prose7.com](https://prose7.com). And if you read it, an honest Amazon review genuinely helps more than you'd think.
 
 The machine wrote a lot of the words. It still needed someone to know which ones were funny.
