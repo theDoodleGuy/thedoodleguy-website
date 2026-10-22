@@ -1,4 +1,7 @@
 export default function (eleventyConfig) {
+  // Changes on every build so browsers fetch the new stylesheet (cache-busting)
+  eleventyConfig.addGlobalData("buildTime", Date.now());
+
   // Copy static assets straight through to the built site
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
