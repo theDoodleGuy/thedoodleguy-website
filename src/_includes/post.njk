@@ -69,6 +69,18 @@ isPost: true
           navigator.share({ title: native.dataset.title, url: native.dataset.url }).catch(function () {});
         });
       }
+      // On phones the LinkedIn/Facebook web share URLs open in the browser, not the app.
+      // Use the native share sheet there so the app can be picked; desktop keeps the web links.
+      var isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+      if (navigator.share && isTouch) {
+        document.querySelectorAll('.share-linkedin, .share-facebook').forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            navigator.share({ title: native ? native.dataset.title : document.title, url: native ? native.dataset.url : location.href })
+              .catch(function (err) { if (err && err.name !== 'AbortError') window.open(btn.href, '_blank', 'noopener'); });
+          });
+        });
+      }
       var copy = document.querySelector('.share-copy');
       if (copy) copy.addEventListener('click', function () {
         var label = copy.querySelector('.share-copy-text');
