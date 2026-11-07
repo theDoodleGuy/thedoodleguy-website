@@ -66,6 +66,11 @@
       <a href="/blog/">Blog</a>
       <a href="/#newsletter">Newsletter</a>
     </div>
+    <nav class="footer-made" aria-label="Things I've made">
+      <span class="mono">// things I've made:</span>
+      {% for item in made %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.footerLabel }}</a>
+      {% endfor %}
+    </nav>
   </div>
   <div class="footer-base mono">© 2026 theDoodleGuy.com // human_output: true</div>
 </footer>

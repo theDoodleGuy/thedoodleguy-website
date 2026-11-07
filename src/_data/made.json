@@ -1,0 +1,35 @@
+[
+  {
+    "type": "Book",
+    "tag": "book",
+    "title": "The Algorithm Ate My Homework",
+    "url": "https://prose7.com",
+    "domain": "prose7.com",
+    "footerLabel": "PROSE-7 (book)",
+    "blurb": "A satirical self-help book about accepting AI, narrated by PROSE-7: a warm, confident and completely wrong fictional AI. Written in a long weekend.",
+    "story": "/blog/i-wrote-a-book-in-three-days/",
+    "cta": "meet PROSE-7"
+  },
+  {
+    "type": "App",
+    "tag": "app",
+    "title": "Solent Companion",
+    "url": "https://solentcompanion.com",
+    "domain": "solentcompanion.com",
+    "footerLabel": "Solent Companion (app)",
+    "blurb": "An Android app for sailing the Solent. Shows big ships and their exclusion zones, fast ferries, local notices and tide timings. Built by my AI agent team.",
+    "story": "/blog/my-ai-team-built-an-app-while-i-sold-crafts/",
+    "cta": "join the test"
+  },
+  {
+    "type": "Shop",
+    "tag": "shop",
+    "title": "Cutlery Crisis",
+    "url": "https://cutlerycrisis.com",
+    "domain": "cutlerycrisis.com",
+    "footerLabel": "Cutlery Crisis (shop)",
+    "blurb": "Soft, funny tees and hoodies for the chronic illness community. AI runs the shop, the SEO and the marketing. Every design is drawn by hand.",
+    "story": "/blog/ai-runs-my-t-shirt-shop/",
+    "cta": "visit the shop"
+  }
+]

@@ -1,0 +1,26 @@
+{# THINGS I'VE MADE — projects live in src/_data/made.json.
+   A card's "The story" link only shows once that post is published,
+   so a scheduled post never produces a broken link. #}
+<section class="made" id="made">
+  <div class="section-head">
+    <div class="mono eyebrow">// proof, not theory</div>
+    <h2 class="display">Things I've made</h2>
+    <p>Side projects where I put the ideas on this blog to work. The machines did the volume. I did the judgement.</p>
+  </div>
+  <div class="made-grid">
+    {% for item in made %}
+    {% set storyPost = null %}
+    {% for post in collections.posts %}{% if post.url == item.story %}{% set storyPost = post %}{% endif %}{% endfor %}
+    <article class="post-card made-card">
+      <div class="made-meta mono">
+        <span class="tag tag-{{ item.tag }}">{{ item.type }}</span>
+        <span class="made-url">{{ item.domain }}</span>
+      </div>
+      <h3><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></h3>
+      <p>{{ item.blurb }}</p>
+      {% if storyPost %}<p class="made-also">The story: <a href="{{ storyPost.url }}">{{ storyPost.data.title }}</a></p>{% endif %}
+      <a class="hand read-more" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.cta }} →</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
